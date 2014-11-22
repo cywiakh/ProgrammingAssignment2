@@ -1,7 +1,12 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## Function makeCacheMatrix:
+## This function creates an object which itself contains other
+## functions. These functions are only used as accessor methods
+## for x (the matrix) and s (the "solve" value pre-calculated for x)
+## The return value is a list with all 4 functions:
+##     - set(x)
+##     - get()
+##     - setsolve(solve)
+##     - getsolve()
 
 makeCacheMatrix <- function(x = matrix()) {
     s <- NULL
@@ -23,7 +28,11 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Function cacheSolve:
+## This function applies the solve() function to the cached matrix.
+## It essentially checks if a "solve" value has already been 
+## calculated for that object. If it has, it returns the value
+## otherwise, it calculates and stores it for future use.
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
